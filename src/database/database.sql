@@ -11,7 +11,9 @@
     CREATE TABLE IF NOT EXISTS members (
       id BIGSERIAL PRIMARY KEY,
       code VARCHAR(100) NOT NULL,
-      name VARCHAR(100) NOT NULL
+      name VARCHAR(100) NOT NULL,
+      isPenalized BOOLEAN DEFAULT false,
+      penalty_end_date DATE
       );
 
 -- Create bororwer table
@@ -21,14 +23,6 @@
       member_id BIGSERIAL REFERENCES members(id) ON DELETE CASADE,
       borrowed_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       return_date TIMESTAMP,
-      status VARCHAR(20) CHECK (status IN ('DONE', 'PENDING'))
+      status borrowsStatus
       );
 
--- Select all books
-    SELECT * FROM books;
-
--- Select all members
-    SELECT * FROM members;
-
--- Select all borrowers
-    SELECT * FROM borrowers;
