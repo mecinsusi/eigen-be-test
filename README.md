@@ -26,6 +26,8 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Use case test: https://github.com/eigen3dev/backend-test-case
+
 ## Project setup
 
 ```bash
